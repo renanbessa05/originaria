@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef, useMemo, Fragment } from 'react';
 import { supabase } from '@/lib/supabase';
 import { BusinessConfig } from '@/types/database.types';
 import { businessService } from '@/services/businessService';
@@ -380,7 +380,7 @@ function KDSTab({ orders, setOrders, onPrint }: { orders: any[], setOrders: any,
                   const isExpanded = expandedId === order.id;
                   const btnLabel = order.status === 'pendente' ? 'P/ Fogo' : (order.status === 'preparando' ? 'Despachar' : 'Concluir');
                   return (
-                    <React.Fragment key={order.id}>
+                    <Fragment key={order.id}>
                        <tr className={`cursor-pointer hover:bg-brand-creme/50 transition-colors ${isExpanded ? 'bg-brand-creme/50' : ''}`} onClick={() => setExpandedId(isExpanded ? null : order.id)}>
                          <td className="px-6 py-4 font-mono font-bold">#{order.id.split('-')[0].toUpperCase()}</td>
                          <td className="px-6 py-4 font-bold">{order.profiles?.nome}</td>
@@ -456,7 +456,7 @@ function KDSTab({ orders, setOrders, onPrint }: { orders: any[], setOrders: any,
                             </td>
                           </tr>
                        )}
-                    </React.Fragment>
+                    </Fragment>
                   )
                })}
              </tbody>
