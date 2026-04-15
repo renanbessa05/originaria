@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Printer, Store, ArrowRight, Package, CheckCircle2, ChevronRight, BarChart3, ListOrdered, CookingPot, Settings, UtensilsCrossed, AlertCircle, Edit, Search } from 'lucide-react';
 import { Toaster, toast } from 'sonner';
 import { formatDistanceToNow, isToday } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
+import { ptBR } from 'date-fns/locale';
 import Link from 'next/link';
 
 interface AdminClientProps {
